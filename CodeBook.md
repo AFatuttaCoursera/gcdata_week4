@@ -27,7 +27,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 In this part I will follow the check list that has been provided in the assigment to briefly describe what is done in the correspondent part of the code of "run_analysis.R" file.
 
 
-###1.Merges the training and the test sets to create one data set.
+###1. Merges the training and the test sets to create one data set.
 
 At first the data will be read into some variables and then merged together by content.
 They are divided mainly in 3 parts:
@@ -37,98 +37,99 @@ They are divided mainly in 3 parts:
 3. activity IDs
 
 
-###2.Extracts only the measurements on the mean and standard deviation for each measurement.
+###2. Extracts only the measurements on the mean and standard deviation for each measurement.
 
 After the read phase, I'll extract only the mean and standard deviation information for each measurement from data in point 2. and will use the "features.txt" file to filter them appropriately.
 
 
-###3.Uses descriptive activity names to name the activities in the data set
+###3. Uses descriptive activity names to name the activities in the data set
 
 Using the "activity_labels.txt" file, I will assign to each activity in point 3. the correct label.
 
 
-###4.Appropriately labels the data set with descriptive variable names.
+###4. Appropriately labels the data set with descriptive variable names.
 
 Here I will use the feature names to label all the data I've extracted earlier and then I'll assign some readable names for the other sets.
 
 Finally I'll merge the 3 datasets into one.
 
-###5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+###5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 In this section a new tidy dataset will be created, this set as requested in the assignment will contain the average of each variable that has been selected in the steps above.
 Last step will create a file with this new data with the function "write.table"
 
-###6.newTidySet description
+###6. newTidySet.txt description
 
-subjectId : id of the subject
-activityId : id of the activity
-activityName : activity name - string
+
+- subjectId : id of the subject - numeric
+- activityId : id of the activity - numeric 
+- activityName : activity name - string
 
 from here below the data is retrieved as the average of each variable for each activity and subject. The data types/meaning is the same as presented in the original research, please refer to original documentation mentioned above.
 
-tBodyAcc-mean()-X 
-tBodyAcc-mean()-Y
-tBodyAcc-mean()-Z
-tBodyAcc-std()-X
-tBodyAcc-std()-Y
-tBodyAcc-std()-Z
-tGravityAcc-mean()-X
-tGravityAcc-mean()-Y
-tGravityAcc-mean()-Z
-tGravityAcc-std()-X
-tGravityAcc-std()-Y
-tGravityAcc-std()-Z
-tBodyAccJerk-mean()-X
-tBodyAccJerk-mean()-Y
-tBodyAccJerk-mean()-Z
-tBodyAccJerk-std()-X
-tBodyAccJerk-std()-Y
-tBodyAccJerk-std()-Z
-tBodyGyro-mean()-X
-tBodyGyro-mean()-Y
-tBodyGyro-mean()-Z
-tBodyGyro-std()-X
-tBodyGyro-std()-Y
-tBodyGyro-std()-Z
-tBodyGyroJerk-mean()-X
-tBodyGyroJerk-mean()-Y
-tBodyGyroJerk-mean()-Z
-tBodyGyroJerk-std()-X
-tBodyGyroJerk-std()-Y
-tBodyGyroJerk-std()-Z
-tBodyAccMag-mean()
-tBodyAccMag-std()
-tGravityAccMag-mean()
-tGravityAccMag-std()
-tBodyAccJerkMag-mean()
-tBodyAccJerkMag-std()
-tBodyGyroMag-mean()
-tBodyGyroMag-std()
-tBodyGyroJerkMag-mean()
-tBodyGyroJerkMag-std()
-fBodyAcc-mean()-X
-fBodyAcc-mean()-Y
-fBodyAcc-mean()-Z
-fBodyAcc-std()-X
-fBodyAcc-std()-Y
-fBodyAcc-std()-Z
-fBodyAccJerk-mean()-X
-fBodyAccJerk-mean()-Y
-fBodyAccJerk-mean()-Z
-fBodyAccJerk-std()-X
-fBodyAccJerk-std()-Y
-fBodyAccJerk-std()-Z
-fBodyGyro-mean()-X
-fBodyGyro-mean()-Y
-fBodyGyro-mean()-Z
-fBodyGyro-std()-X
-fBodyGyro-std()-Y
-fBodyGyro-std()-Z
-fBodyAccMag-mean()
-fBodyAccMag-std()
-fBodyBodyAccJerkMag-mean()
-fBodyBodyAccJerkMag-std()
-fBodyBodyGyroMag-mean()
-fBodyBodyGyroMag-std()
-fBodyBodyGyroJerkMag-mean()
-fBodyBodyGyroJerkMag-std()
+- tBodyAcc-mean()-X
+- tBodyAcc-mean()-Y
+- tBodyAcc-mean()-Z
+- tBodyAcc-std()-X
+- tBodyAcc-std()-Y
+- tBodyAcc-std()-Z
+- tGravityAcc-mean()-X
+- tGravityAcc-mean()-Y
+- tGravityAcc-mean()-Z
+- tGravityAcc-std()-X
+- tGravityAcc-std()-Y
+- tGravityAcc-std()-Z
+- tBodyAccJerk-mean()-X
+- tBodyAccJerk-mean()-Y
+- tBodyAccJerk-mean()-Z
+- tBodyAccJerk-std()-X
+- tBodyAccJerk-std()-Y
+- tBodyAccJerk-std()-Z
+- tBodyGyro-mean()-X
+- tBodyGyro-mean()-Y
+- tBodyGyro-mean()-Z
+- tBodyGyro-std()-X
+- tBodyGyro-std()-Y
+- tBodyGyro-std()-Z
+- tBodyGyroJerk-mean()-X
+- tBodyGyroJerk-mean()-Y
+- tBodyGyroJerk-mean()-Z
+- tBodyGyroJerk-std()-X
+- tBodyGyroJerk-std()-Y
+- tBodyGyroJerk-std()-Z
+- tBodyAccMag-mean()
+- tBodyAccMag-std()
+- tGravityAccMag-mean()
+- tGravityAccMag-std()
+- tBodyAccJerkMag-mean()
+- tBodyAccJerkMag-std()
+- tBodyGyroMag-mean()
+- tBodyGyroMag-std()
+- tBodyGyroJerkMag-mean()
+- tBodyGyroJerkMag-std()
+- fBodyAcc-mean()-X
+- fBodyAcc-mean()-Y
+- fBodyAcc-mean()-Z
+- fBodyAcc-std()-X
+- fBodyAcc-std()-Y
+- fBodyAcc-std()-Z
+- fBodyAccJerk-mean()-X
+- fBodyAccJerk-mean()-Y
+- fBodyAccJerk-mean()-Z
+- fBodyAccJerk-std()-X
+- fBodyAccJerk-std()-Y
+- fBodyAccJerk-std()-Z
+- fBodyGyro-mean()-X
+- fBodyGyro-mean()-Y
+- fBodyGyro-mean()-Z
+- fBodyGyro-std()-X
+- fBodyGyro-std()-Y
+- fBodyGyro-std()-Z
+- fBodyAccMag-mean()
+- fBodyAccMag-std()
+- fBodyBodyAccJerkMag-mean()
+- fBodyBodyAccJerkMag-std()
+- fBodyBodyGyroMag-mean()
+- fBodyBodyGyroMag-std()
+- fBodyBodyGyroJerkMag-mean()
+- fBodyBodyGyroJerkMag-std()

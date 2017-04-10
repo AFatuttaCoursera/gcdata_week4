@@ -142,7 +142,7 @@ $(document).ready(function () {
 <h2>Process description</h2>
 <p>In this part I will follow the check list that has been provided in the assigment to briefly describe what is done in the correspondent part of the code of “run_analysis.R” file.</p>
 <div id="merges-the-training-and-the-test-sets-to-create-one-data-set." class="section level3">
-<h3>1.Merges the training and the test sets to create one data set.</h3>
+<h3>1. Merges the training and the test sets to create one data set.</h3>
 <p>At first the data will be read into some variables and then merged together by content. They are divided mainly in 3 parts:</p>
 <ol style="list-style-type: decimal">
 <li>Subject IDs</li>
@@ -151,21 +151,98 @@ $(document).ready(function () {
 </ol>
 </div>
 <div id="extracts-only-the-measurements-on-the-mean-and-standard-deviation-for-each-measurement." class="section level3">
-<h3>2.Extracts only the measurements on the mean and standard deviation for each measurement.</h3>
+<h3>2. Extracts only the measurements on the mean and standard deviation for each measurement.</h3>
 <p>After the read phase, I’ll extract only the mean and standard deviation information for each measurement from data in point 2. and will use the “features.txt” file to filter them appropriately.</p>
 </div>
 <div id="uses-descriptive-activity-names-to-name-the-activities-in-the-data-set" class="section level3">
-<h3>3.Uses descriptive activity names to name the activities in the data set</h3>
+<h3>3. Uses descriptive activity names to name the activities in the data set</h3>
 <p>Using the “activity_labels.txt” file, I will assign to each activity in point 3. the correct label.</p>
 </div>
 <div id="appropriately-labels-the-data-set-with-descriptive-variable-names." class="section level3">
-<h3>4.Appropriately labels the data set with descriptive variable names.</h3>
+<h3>4. Appropriately labels the data set with descriptive variable names.</h3>
 <p>Here I will use the feature names to label all the data I’ve extracted earlier and then I’ll assign some readable names for the other sets.</p>
 <p>Finally I’ll merge the 3 datasets into one.</p>
 </div>
 <div id="from-the-data-set-in-step-4-creates-a-second-independent-tidy-data-set-with-the-average-of-each-variable-for-each-activity-and-each-subject." class="section level3">
-<h3>5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.</h3>
+<h3>5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.</h3>
 <p>In this section a new tidy dataset will be created, this set as requested in the assignment will contain the average of each variable that has been selected in the steps above. Last step will create a file with this new data with the function “write.table”</p>
+</div>
+<div id="newtidyset.txt-description" class="section level3">
+<h3>6. newTidySet.txt description</h3>
+<ul>
+<li>subjectId : id of the subject - numeric</li>
+<li>activityId : id of the activity - numeric</li>
+<li>activityName : activity name - string</li>
+</ul>
+<p>from here below the data is retrieved as the average of each variable for each activity and subject. The data types/meaning is the same as presented in the original research, please refer to original documentation mentioned above.</p>
+<ul>
+<li>tBodyAcc-mean()-X</li>
+<li>tBodyAcc-mean()-Y</li>
+<li>tBodyAcc-mean()-Z</li>
+<li>tBodyAcc-std()-X</li>
+<li>tBodyAcc-std()-Y</li>
+<li>tBodyAcc-std()-Z</li>
+<li>tGravityAcc-mean()-X</li>
+<li>tGravityAcc-mean()-Y</li>
+<li>tGravityAcc-mean()-Z</li>
+<li>tGravityAcc-std()-X</li>
+<li>tGravityAcc-std()-Y</li>
+<li>tGravityAcc-std()-Z</li>
+<li>tBodyAccJerk-mean()-X</li>
+<li>tBodyAccJerk-mean()-Y</li>
+<li>tBodyAccJerk-mean()-Z</li>
+<li>tBodyAccJerk-std()-X</li>
+<li>tBodyAccJerk-std()-Y</li>
+<li>tBodyAccJerk-std()-Z</li>
+<li>tBodyGyro-mean()-X</li>
+<li>tBodyGyro-mean()-Y</li>
+<li>tBodyGyro-mean()-Z</li>
+<li>tBodyGyro-std()-X</li>
+<li>tBodyGyro-std()-Y</li>
+<li>tBodyGyro-std()-Z</li>
+<li>tBodyGyroJerk-mean()-X</li>
+<li>tBodyGyroJerk-mean()-Y</li>
+<li>tBodyGyroJerk-mean()-Z</li>
+<li>tBodyGyroJerk-std()-X</li>
+<li>tBodyGyroJerk-std()-Y</li>
+<li>tBodyGyroJerk-std()-Z</li>
+<li>tBodyAccMag-mean()</li>
+<li>tBodyAccMag-std()</li>
+<li>tGravityAccMag-mean()</li>
+<li>tGravityAccMag-std()</li>
+<li>tBodyAccJerkMag-mean()</li>
+<li>tBodyAccJerkMag-std()</li>
+<li>tBodyGyroMag-mean()</li>
+<li>tBodyGyroMag-std()</li>
+<li>tBodyGyroJerkMag-mean()</li>
+<li>tBodyGyroJerkMag-std()</li>
+<li>fBodyAcc-mean()-X</li>
+<li>fBodyAcc-mean()-Y</li>
+<li>fBodyAcc-mean()-Z</li>
+<li>fBodyAcc-std()-X</li>
+<li>fBodyAcc-std()-Y</li>
+<li>fBodyAcc-std()-Z</li>
+<li>fBodyAccJerk-mean()-X</li>
+<li>fBodyAccJerk-mean()-Y</li>
+<li>fBodyAccJerk-mean()-Z</li>
+<li>fBodyAccJerk-std()-X</li>
+<li>fBodyAccJerk-std()-Y</li>
+<li>fBodyAccJerk-std()-Z</li>
+<li>fBodyGyro-mean()-X</li>
+<li>fBodyGyro-mean()-Y</li>
+<li>fBodyGyro-mean()-Z</li>
+<li>fBodyGyro-std()-X</li>
+<li>fBodyGyro-std()-Y</li>
+<li>fBodyGyro-std()-Z</li>
+<li>fBodyAccMag-mean()</li>
+<li>fBodyAccMag-std()</li>
+<li>fBodyBodyAccJerkMag-mean()</li>
+<li>fBodyBodyAccJerkMag-std()</li>
+<li>fBodyBodyGyroMag-mean()</li>
+<li>fBodyBodyGyroMag-std()</li>
+<li>fBodyBodyGyroJerkMag-mean()</li>
+<li>fBodyBodyGyroJerkMag-std()</li>
+</ul>
 </div>
 </div>
 
