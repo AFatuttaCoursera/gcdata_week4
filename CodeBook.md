@@ -64,7 +64,7 @@ subjectId : id of the subject
 activityId : id of the activity
 activityName : activity name - string
 
-from here below the data is retrieved as the mean of the same variables presented in the original research, please refer to original documentation mentioned above.
+from here below the data is retrieved as the average of each variable for each activity and subject. The data types/meaning is the same as presented in the original research, please refer to original documentation mentioned above.
 
 tBodyAcc-mean()-X 
 tBodyAcc-mean()-Y
