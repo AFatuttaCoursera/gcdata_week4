@@ -1,22 +1,21 @@
 ##library loading
 library(data.table)
 
-
 ##1.Merges the training and the test sets to create one data set.
 
 ##reading test data
-subjTest <- read.table("./dc_prj/UCI HAR Dataset/test/subject_test.txt", header = FALSE)
+subjTest <- read.table("./gcdata_week4/UCI HAR Dataset/test/subject_test.txt", header = FALSE)
 
-dataTest <- read.table("./dc_prj/UCI HAR Dataset/test/X_test.txt", header = FALSE)
+dataTest <- read.table("./gcdata_week4/UCI HAR Dataset/test/X_test.txt", header = FALSE)
 
-activityTest <- read.table("./dc_prj/UCI HAR Dataset/test/Y_test.txt", header = FALSE)
+activityTest <- read.table("./gcdata_week4/UCI HAR Dataset/test/Y_test.txt", header = FALSE)
 
 ##reading train data
-subjTrain <- read.table("./dc_prj/UCI HAR Dataset/test/subject_test.txt", header = FALSE)
+subjTrain <- read.table("./gcdata_week4/UCI HAR Dataset/train/subject_train.txt", header = FALSE)
 
-dataTrain <- read.table("./dc_prj/UCI HAR Dataset/test/X_test.txt", header = FALSE)
+dataTrain <- read.table("./gcdata_week4/UCI HAR Dataset/train/X_train.txt", header = FALSE)
 
-activityTrain <- read.table("./dc_prj/UCI HAR Dataset/test/Y_test.txt", header = FALSE)
+activityTrain <- read.table("./gcdata_week4/UCI HAR Dataset/train/y_train.txt", header = FALSE)
 
 ##merging the 2 datasets and assigning readable names
 
@@ -63,4 +62,4 @@ finalSet <- data.table(cbind(subjFull, activityFull,dataFull))
 ##5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 newTidySet <- data.table(finalSet[, lapply(.SD, mean, na.rm=TRUE), by = list(subjectId,activityId,activityName) ])
 
-write.table(x = newTidySet, sep = ";", file = "./dc_prj/newTidySet.txt", na = "NA",row.name=FALSE)
+write.table(x = newTidySet, sep = ";", file = "./gcdata_week4/newTidySet.txt", na = "NA",row.name=FALSE)
